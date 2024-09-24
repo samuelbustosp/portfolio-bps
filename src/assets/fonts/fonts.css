@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'SpotifyCircular';
+    src: url('./CircularSpotifyText-Bold.otf') format('truetype');
+    font-weight: 700; /* Regular */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SpotifyCircular';
+    src: url('./CircularSpotifyText-Medium.otf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SpotifyCircular';
+    src: url('./CircularSpotifyText-Black.otf') format('truetype');
+    font-weight: 900; /* Bold */
+    font-style: normal;
+  }
