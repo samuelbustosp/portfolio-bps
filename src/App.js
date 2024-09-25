@@ -1,9 +1,11 @@
 import Home from "./pages/Home";
+import SkillsMe from "./pages/SkillsPage";
 
 function App() {
   return (
-    <div className="App min-h-screen bg-gradient-to-t from-slate-900 to-green-800 ">
+    <div className="App min-h-screen ">
       <Home/>
+      <SkillsMe/>
     </div>
   );
 }

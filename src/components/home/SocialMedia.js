@@ -1,5 +1,6 @@
 import { FaLinkedin, FaInstagram, FaGithub, FaCheckCircle } from 'react-icons/fa';
 import { BiLogoGmail } from "react-icons/bi";
+import { useState } from 'react';
 
 const SocialMedia = () => {
     const socialLinks = [
@@ -24,14 +25,15 @@ const SocialMedia = () => {
             followers: 2,
             year: 2024,
         },
-        {
-            name: "Gmail",
-            url: `mailto:samuelbustospuntis@gmail.com?subject=Consulta&body=${encodeURIComponent("Hola Samuel, me gustaría hacerte una consulta.")}`,
-            icon: <BiLogoGmail />,
-            followers: 100,
-            year: 2024,
-        },
     ];
+    const [visitedLinks, setVisitedLinks] = useState(socialLinks.map(() => false));
+
+    const handleLinkClick = (index) => {
+        // Actualizar el estado de enlaces visitados
+        const newVisitedLinks = [...visitedLinks];
+        newVisitedLinks[index] = true;
+        setVisitedLinks(newVisitedLinks);
+    };
     
     const formatYear = year => `${year.toString().slice(0, 2)}:${year.toString().slice(2)}`;
 
@@ -46,7 +48,15 @@ const SocialMedia = () => {
                     {/* Columna Izquierda - Número y Icono */}
                     <div className="flex items-center flex-1">
                         <span className="font-bold">{index + 1}.</span>
-                        <a href={link.url} className='flex items-center'><span className="text-4xl ml-2">{link.icon}</span></a>
+                        <a 
+                            href={link.url} 
+                            className='flex items-center' 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={() => handleLinkClick(index)} // Maneja el clic en el enlace
+                        >
+                            <span className="text-4xl ml-2">{link.icon}</span>
+                        </a>
                         <a href={link.url} target="_blank" rel="noopener noreferrer" className="font-spotify font-medium ml-2">
                             <span>{link.name}</span>
                         </a>
@@ -63,7 +73,9 @@ const SocialMedia = () => {
 
                     
                     <div className="flex items-center flex-1 justify-end gap-6">
-                        <span className='text-green-500 mr-2'><FaCheckCircle/></span>
+                        {visitedLinks[index] && ( // Solo mostrar el check si ha sido visitado
+                            <span className='text-green-500 mr-2'><FaCheckCircle/></span>
+                        )}
                         <span className='font-spotify font-light text-md opacity-85'>{formatYear(link.year)}</span>
                     </div>
                 </div>

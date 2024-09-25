@@ -1,7 +1,8 @@
-import imgMe from './../assets/perfil.jpg';
+import imgMe from './../../assets/perfil.jpg';
 import SocialMedia from './SocialMedia';
 import { FaPlay } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import About from './About';
 
 const Person = () => {
     const [showSocialMedia, setShowSocialMedia] = useState(false); 
@@ -40,16 +41,24 @@ const Person = () => {
                 </div>
 
                 <div className="text-left mt-2">
-                    <h1 className="font-spotify font-medium text-3xl text-white">Samuel</h1>
-                    <h1 className="font-spotify font-light text-xl text-white opacity-75 leading-5">Desarrollador Web</h1>
+                    <h1 className="font-spotify font-bold text-3xl text-white">Samuel</h1>
+                    <h2 className="font-spotify font-light text-xl text-white opacity-75 leading-5">Desarrollador Web</h2>
                 </div>
             </div>
 
-            {showSocialMedia && (
-                <div className={`ml-8 mt-4 transition-transform duration-300 transform ${translateY} opacity-100`}>
-                    <SocialMedia />
-                </div>
-            )}
+            <div className="relative bottom-10">
+                <About />
+                {showSocialMedia && (
+                    <div
+                        className={`absolute left-0 ml-8 transition-transform duration-300 transform ${translateY} opacity-100`}
+                    >
+                        <SocialMedia />
+                    </div>
+                )}
+            </div>
+
+
+            
         </div>
     );
 }
