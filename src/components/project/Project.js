@@ -2,16 +2,19 @@ import { Card } from "flowbite-react";
 const Project = ({name, img, desc,url}) => {
     return (
         <Card
-          className="max-w-sm"
+          className="max-w-sm p-2 bg-gray-900 border-gray-700"
           imgAlt="Imagen del proyecto."
           imgSrc={img}
         >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {name}
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {desc}
-          </p>
+          <div className="py-2">
+            <h5 className="text-2xl font-bold font-spotify tracking-tight text-white">
+              {name}
+            </h5>
+            <p className="font-normal text-gray-500 leading-4">
+              {desc}
+            </p>
+          </div>
+          
         </Card>
       );
 }

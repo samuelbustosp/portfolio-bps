@@ -9,7 +9,10 @@ const ProjectsPage = () => {
                 <h1 className="font-spotify font-black text-3xl text-white mt-28 ml-20">Proyectos</h1>
                 
             </div>
-            <ProjectList/>
+            <div className="ml-20 mt-4">
+                <ProjectList/>
+            </div>
+            
         </div>
      );
 }
