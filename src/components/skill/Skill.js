@@ -1,33 +1,33 @@
 import React from 'react';
 
-const Skill = ({ name, level, icon }) => {
-    // Define una función para asignar clases de fondo según el nivel
-    const getLevelBackground = (level) => {
-        switch (level) {
-            case 'High':
-                return 'bg-green-500'; // Verde para alto
-            case 'Medium':
-                return 'bg-yellow-500'; // Amarillo para medio
-            case 'Low':
-                return 'bg-red-500'; // Rojo para bajo
+const Skill = ({ name, icon,category }) => {
+    const getCategoryBackground = (category) => {
+        switch (category) {
+            case 'Language':
+                return 'bg-green-500';
+            case 'Library':
+                return 'bg-yellow-500';
+            case 'Framework':
+                return 'bg-red-500';
             default:
-                return 'bg-gray-300'; // Gris para otros casos
+                return 'bg-gray-300';
         }
     };
 
     return (
-        <div className="flex flex-col items-start mb-5"> {/* Cambia items-center a items-start */}
-            <article className="flex flex-col shadow-lg bg-gray-950 bg-opacity-80 p-2 border border-gray-800 w-40 h-40 rounded-lg">
+        <div className="flex flex-col items-start mb-0 mt-6"> {/* Eliminado el margen inferior */}
+            <article 
+                className="flex flex-col shadow-lg bg-gray-950 bg-opacity-80 p-1 border border-gray-800 w-32 h-32 rounded-xl hover:bg-gray-800 hover:shadow-slate-700"
+            > 
                 <div className='flex items-center justify-center h-full'>
-                    <span className="text-7xl text-white">{icon}</span>
+                    <span className="text-5xl text-white">{icon}</span> 
+                    
                 </div>
+                <div className={`text-white leading-3 p-1 rounded-lg ${getCategoryBackground(category)} inline-block`}></div>
             </article>
-            {/* Nombre y nivel alineados a la izquierda */}
-            <div className='w-full ml-2'> {/* Asegúrate de que el div ocupe el ancho completo */}
-                <h3 className="font-bold font-spotify text-white text-left mt-1">{name}</h3> {/* Cambia text-center a text-left */}
-                <p className={` text-white leading-3 p-1.5 text-sm rounded-full font-spotify font-light ${getLevelBackground(level)} inline-block`}>
-                    {level}
-                </p>
+            <div className='w-full ml-0'> {/* Eliminado margen izquierdo */}
+                <h3 className="font-bold font-spotify text-white text-left mt-1 text-sm">{name}</h3> {/* Reducido el tamaño del texto */}
+                
             </div>
         </div>
     );

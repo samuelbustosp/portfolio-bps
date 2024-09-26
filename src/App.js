@@ -1,11 +1,25 @@
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import SkillsMe from "./pages/SkillsPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import SkillsPage from "./pages/SkillsPage";
 
 function App() {
   return (
-    <div className="App min-h-screen ">
-      <Home/>
-      <SkillsMe/>
+    <div className="App ">
+      <Navbar/> 
+      
+      <section id="home">
+        <Home/>
+      </section>
+      
+      <section id="skills">
+        <SkillsPage/>
+      </section>
+      
+      <section id="projects">
+        <ProjectsPage/>
+      </section>
+      
     </div>
   );
 }

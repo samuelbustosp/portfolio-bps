@@ -5,8 +5,8 @@ import SocialMedia from "../components/home/SocialMedia";
 
 const Home = () => {
     return ( 
-        <div className="pt-4 bg-gradient-to-t from-slate-900 to-green-800 min-h-screen">
-            <Navbar/>
+        <div className="pt-4 bg-gradient-to-t from-slate-900 to-green-800 min-h-screen ">
+            
             <Person/>
             
         </div>

@@ -19,14 +19,16 @@ const Person = () => {
 
     return ( 
         <div className="flex items-center justify-start ml-20"> 
-            <div className="relative mt-16">
-                
+            <div className="mt-36">
                 <div
                     className="relative"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)} 
-                >
-                    <img src={imgMe} alt="Perfil" className="h-60 w-60 rounded-full" />
+                >   
+                    <div className='shadow-xl rounded-full'>
+                        <img src={imgMe} alt="Perfil" className="h-60 w-60 rounded-full" />
+                    </div>
+                    
 
                     
                     <button
@@ -42,11 +44,11 @@ const Person = () => {
 
                 <div className="text-left mt-2">
                     <h1 className="font-spotify font-bold text-3xl text-white">Samuel</h1>
-                    <h2 className="font-spotify font-light text-xl text-white opacity-75 leading-5">Desarrollador Web</h2>
+                    <h2 className="font-spotify font-light text-xl text-white opacity-75 leading-5">Software Developer</h2>
                 </div>
             </div>
 
-            <div className="relative bottom-10">
+            <div className="relative">
                 <About />
                 {showSocialMedia && (
                     <div
