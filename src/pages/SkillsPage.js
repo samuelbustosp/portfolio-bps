@@ -7,7 +7,7 @@ const SkillsPage = () => {
     
     
     return ( 
-        <div className="bg-slate-900 min-h-screen">
+        <div className="bg-gray-900 min-h-screen">
             <div className="flex items-center justify-start">
                 <h1 className="font-spotify font-black text-3xl text-white mt-28 ml-20">Habilidades</h1>
                 

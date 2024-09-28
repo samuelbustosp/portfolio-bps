@@ -1,3 +1,4 @@
+import TheFooter from "./components/TheFooter";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -18,6 +19,10 @@ function App() {
       
       <section id="projects">
         <ProjectsPage/>
+      </section>
+
+      <section id="footer">
+        <TheFooter/>
       </section>
       
     </div>
